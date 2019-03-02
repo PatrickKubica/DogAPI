@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Picturecards from '~/components/PictureCards'
+import Picturecards from '~/components/Picturecards'
 export default {
   components: {
     Picturecards
