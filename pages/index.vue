@@ -1,13 +1,12 @@
 <template>
-  <v-container>
-    <div>
-      Hello World
-    </div>
-  </v-container>
+  <picturecards />
 </template>
 
 <script>
+import Picturecards from '~/components/PictureCards'
 export default {
-  components: {}
+  components: {
+    Picturecards
+  }
 }
 </script>
