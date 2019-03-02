@@ -1,7 +1,7 @@
 <template>
   <v-container grid-list-md text-xs-center>
-    <v-layout>
-      <v-flex v-for="(picture, index) in pictures" :key="index">
+    <v-layout wrap>
+      <v-flex v-for="(picture, index) in pictures" :key="index" xs4>
         <v-card>
           <v-img
             :src="picture"
