@@ -18,21 +18,18 @@
   </v-container>
 </template>
 <script>
+import axios from 'axios'
+
 export default {
   data: function() {
     return {
-      pictures: [
-        'https://images.dog.ceo/breeds/pekinese/n02086079_5125.jpg',
-        'https://images.dog.ceo/breeds/pyrenees/n02111500_1170.jpg',
-        'https://images.dog.ceo/breeds/clumber/n02101556_8168.jpg',
-        'https://images.dog.ceo/breeds/pomeranian/n02112018_3504.jpg',
-        'https://images.dog.ceo/breeds/airedale/n02096051_3981.jpg',
-        'https://images.dog.ceo/breeds/rottweiler/n02106550_148.jpg',
-        'https://images.dog.ceo/breeds/leonberg/n02111129_819.jpg',
-        'https://images.dog.ceo/breeds/schipperke/n02104365_675.jpg',
-        'https://images.dog.ceo/breeds/dalmatian/cooper2.jpg'
-      ]
+      pictures: []
     }
+  },
+  mounted() {
+    axios
+      .get('https://dog.ceo/api/breeds/image/random/9')
+      .then(response => (this.pictures = response.data.message))
   }
 }
 </script>
