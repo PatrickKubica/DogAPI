@@ -1,15 +1,19 @@
 <template>
   <v-container grid-list-md text-xs-center>
+    <v-btn flat color="orange" @click="getRandomImages">
+      Get fresh dog pictures!
+    </v-btn>
     <v-layout wrap>
-      <v-flex v-for="(picture, index) in pictures" :key="index" xs4>
+      <v-flex v-for="(picture, index) in pictures" :key="index" xs6 md4>
         <v-card>
           <v-img
             :src="picture"
-            aspect-ratio="2.75"
+            aspect-ratio="1.5"
+            @click="openImage(picture)"
           />
           <v-card-actions>
             <v-btn :href="picture" flat color="orange">
-              Open
+              open
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -28,8 +32,18 @@ export default {
   },
   mounted() {
     axios
-      .get('https://dog.ceo/api/breeds/image/random/9')
+      .get('https://dog.ceo/api/breeds/image/random/6')
       .then(response => (this.pictures = response.data.message))
+  },
+  methods: {
+    getRandomImages() {
+      axios
+        .get('https://dog.ceo/api/breeds/image/random/6')
+        .then(response => (this.pictures = response.data.message))
+    },
+    openImage(picture) {
+      window.open(picture, '_self')
+    }
   }
 }
 </script>
