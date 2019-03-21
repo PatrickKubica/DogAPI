@@ -1,6 +1,6 @@
 # DogAPI-Consumer
 
-> DogAPI-Consumer
+> Nuxt app that interacts with the Dog API (https://dog.ceo/dog-api/) to request and display random images
 
 ## Build Setup
 
